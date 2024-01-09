@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav id="navbar">
       <h2>
-        <Link to="/">
+        <Link to="/MoviesLib">
           <BiCameraMovie /> <span>MoviesLib</span>
         </Link>
       </h2>
