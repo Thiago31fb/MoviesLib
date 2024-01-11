@@ -5,11 +5,15 @@ import {
   BsWallet2,
   BsHourglassSplit,
   BsFillFileEarmarkTextFill,
+  BsFilm,
 } from "react-icons/bs";
+
+import { BiCameraMovie } from "react-icons/bi";
 
 import MovieCard from "../components/MovieCard";
 
 import "./Movie.css";
+import Produtora from "../components/Produtora";
 
 const moviesURL = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -21,7 +25,6 @@ const Movie = () => {
   const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data);
     setMovie(data);
   };
 
@@ -36,7 +39,7 @@ const Movie = () => {
       currency: "USD",
     });
   };
-
+  // console.log(movie.production_companies);
   return (
     <div className="movie-page">
       {movie && (
@@ -61,11 +64,31 @@ const Movie = () => {
             </h3>
             <p>{movie.runtime} minutos</p>
           </div>
+          <div className="info">
+            <h3>
+              <BsFilm /> Generos:
+            </h3>
+            <p>
+              {movie.genres.map((genero) => (
+                <span key={genero.id}>{genero.name} / </span>
+              ))}
+            </p>
+          </div>
           <div className="info description">
             <h3>
               <BsFillFileEarmarkTextFill /> Descrição:
             </h3>
             <p>{movie.overview}</p>
+          </div>
+          <div className="info">
+            <h3>
+              <BiCameraMovie /> Produtoras:
+            </h3>
+            <div className="infoProdutoras">
+              {movie.production_companies.map((produtora) => (
+                <Produtora key={produtora.id} produtora={produtora} />
+              ))}
+            </div>
           </div>
         </>
       )}

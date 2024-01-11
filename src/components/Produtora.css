@@ -1,0 +1,25 @@
+.produtoraContainer {
+  margin:5px;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 230px;
+
+  background-color: #555555;
+}
+.produtoraContainer h3{
+    font-size: 1.05rem;
+}
+
+.imgContainer {
+  background-color: aliceblue;
+  display: flex;
+  max-width: 210px;
+  border: solid 5px white;
+  border-radius: 5px;
+}
+.imgContainer img {
+  display: flex;
+  width: 200px;
+  justify-self: center;
+  align-self: center;
+}

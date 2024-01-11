@@ -1,0 +1,128 @@
+.wrapper {
+  overflow-x: auto;
+  width: 100%;
+  height: 300px;
+  background-color: rgb(255, 176, 80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerShow {
+  height: 250px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+.card {
+  width: 80px;
+  border-radius: 0.75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+  background-repeat: no-repeat;
+}
+
+.card > .row {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.card > .row > .icon {
+  background: #223;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.card > .row > .description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.description p {
+  color: #b0b0ba;
+  padding-top: 5px;
+}
+.description a {
+  padding-top: 5px;
+  font-size: 1.2rem;
+  width: 87px;
+  padding: 8px;
+  text-shadow: 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000;
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+
+.description h4 {
+  width: 410px;
+  text-transform: uppercase;
+  padding: 8px;
+  text-shadow: 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000, 2px 2px 8px #000000;
+}
+.containerShow input {
+  display: none;
+}
+
+.containerShow input:checked + label {
+  width: 500px;
+  cursor:context-menu;
+}
+
+.containerShow input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    justify-content: initial;
+  }
+}
+@media (max-width: 525px) {
+  .containerShow input:checked + label {
+    width: 92vw;
+  }
+}
+
+/* Estilizando a barra de rolagem horizontal */
+.wrapper::-webkit-scrollbar {
+  width: 8px; /* Largura da barra de rolagem */
+  height: 5px; /* Altura da barra de rolagem (para rolagem vertical) */
+}
+
+/* Estilizando o trilho (background) da barra de rolagem */
+.wrapper::-webkit-scrollbar-track {
+  background-color: rgb(255, 176, 80); /* Cor do fundo do trilho */
+  border-radius: 5px; /* Borda arredondada do trilho */
+}
+
+/* Estilizando o "thumb" (alça) da barra de rolagem */
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #464646; /* Cor da alça */
+  border-radius: 5px; /* Borda arredondada da alça */
+}
+
+/* Mudando a cor da alça quando o mouse estiver sobre ela */
+.wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #707070; /* Cor da alça ao passar o mouse */
+}

@@ -7,6 +7,7 @@ import "./MoviesGrid.css";
 
 import MovieCard from "../components/MovieCard";
 import { useSearchParams } from "react-router-dom";
+import ShowBaner from "../components/ShowBaner";
 
 const Search = () => {
   const [searchParams] = useSearchParams();
@@ -31,6 +32,7 @@ const Search = () => {
       <h2 className="title">
         Resultados para: <span className="query-text">{query}</span>
       </h2>
+      {movies.length > 0 && <ShowBaner movies={movies} />}
       <div className="movies-container">
         {movies.length === 0 && <p>Carregando...</p>}
         {movies.length > 0 &&
