@@ -1,3 +1,4 @@
+// npm run deploy
 import { useState } from 'react'
 
 import './App.css'

@@ -37,9 +37,9 @@ return (
       <div className="containerShow">
         {FilmesAleatorios.map((filme, index) => (
           <Baner
-            key={index}
+            key={filme.id}
             movie={filme}
-            isFirst={index === 3 && true}
+            isFirst={index === 0 && true}
           />
         ))}
       </div>
